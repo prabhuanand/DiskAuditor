@@ -1,3 +1,5 @@
+# diskauditor — Build Spec
+
 Build a local macOS disk usage auditor with a pre-scan cache architecture.
 
 ## Architecture
