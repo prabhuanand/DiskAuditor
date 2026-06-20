@@ -34,10 +34,45 @@ an acceptance test checklist: see [`SPEC.md`](./SPEC.md).
 - Python 3.9+
 - No database, no auth, no external services — fully offline, fully local
 
+## Building this with Claude Code
+
+This repo currently ships the spec (`SPEC.md`), not a hand-written
+implementation — it's designed to be built directly from that spec, by
+Claude or anyone else, deterministically enough that the result passes the
+acceptance tests in `SPEC.md`.
+
+To build it with [Claude Code](https://docs.claude.com/en/docs/claude-code):
+
+```bash
+git clone https://github.com/prabhuanand/DiskAuditor.git
+cd DiskAuditor
+claude
+```
+
+Then, inside the Claude Code session:
+
+```
+Read SPEC.md and implement scanner.py, app.py, requirements.txt, run.sh,
+and com.diskauditor.scanner.plist exactly as specified. Once built, run
+through the Acceptance Test Checklist section of SPEC.md yourself to
+verify the implementation, including building the synthetic test tree and
+checking the cache.json/scan_meta.json values against the expected table.
+```
+
+Claude Code will read `SPEC.md`, write the files, and can run the
+acceptance tests itself since they're just shell commands and JSON
+spot-checks — no manual verification needed beyond the UI checklist at the
+bottom of the spec, which still needs a human to actually click through it
+in a browser.
+
+If you'd rather build it through claude.ai chat instead of Claude Code,
+paste the contents of `SPEC.md` into a conversation and ask Claude to
+implement it file by file — the acceptance tests still apply the same way.
+
 ## Quick start
 
 ```bash
-git clone https://github.com/<you>/diskauditor.git
+git clone https://github.com/prabhuanand/diskauditor.git
 cd diskauditor
 ./run.sh
 ```
