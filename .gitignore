@@ -1,0 +1,32 @@
+# diskauditor — generated/runtime artifacts, never commit these
+
+# Scanner output — contains real filesystem paths from your machine
+cache.json
+cache.json.tmp
+scan_meta.json
+scan_meta.json.tmp
+.scanner.lock
+
+# Python virtual environment (created by run.sh)
+.venv/
+venv/
+
+# Python bytecode / cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# launchd logs (written to /tmp by default, but just in case)
+diskauditor.out
+diskauditor.err
+
+# Local test trees used for acceptance testing (see SPEC.md)
+testroot/
